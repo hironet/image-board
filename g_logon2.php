@@ -8,8 +8,8 @@ require_once("db_init.php");
 
 <html>
 <head>
-<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-<title>ようこそ愛鳥獣写真館</title>
+<meta charset="UTF-8">
+<title>ようこそ愛鳥獣写真館momoへ！</title>
 </head>
 <body>
 
@@ -21,7 +21,7 @@ if ($ps->rowCount() > 0) {
     $_SESSION['us'] = $u;
 ?>
 
-<p>ようこそ愛鳥獣写真館 momoへ！</p>
+<p>ようこそ愛鳥獣写真館momoへ！</p>
 <p><a href='g.php'>ここをクリックして一覧表示にどうぞ</a></p>
 
 <?php

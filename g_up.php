@@ -4,8 +4,8 @@ session_start();
 
 <html>
 <head>
-<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
-<title>ようこそ愛鳥獣写真館 momoへ！</title>
+<meta charset="UTF-8">
+<title>ようこそ愛鳥獣写真館momoへ！</title>
 </head>
 <body>
 <p style="color: red">　愛鳥獣写真館momo (=^..^=)</p>
