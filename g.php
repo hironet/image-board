@@ -1,8 +1,8 @@
 <?php
 session_start();
 ?>
-
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <title>ようこそ愛鳥獣写真館momoへ！</title>
@@ -12,11 +12,9 @@ session_start();
 <?php
 if (isset($_SESSION['us']) && $_SESSION['us'] != null) {
 ?>
-
 <p style='color: red'>　愛鳥獣写真館momo (=^..^=)</p>
 <p><a href='g_up.php'>アップロード</a><br>
 <a href='g_logoff.php'>ログオフ</a></p>
-
 <?php
   require_once("db_init.php");
   $ps = $db->query('SELECT * FROM table1 ORDER BY ban DESC');
@@ -28,10 +26,8 @@ if (isset($_SESSION['us']) && $_SESSION['us'] != null) {
           <img src='./gz_img/thumb_$tg'></a><hr></p>";
   }
 ?>
-
 <p><a href='g_up.php'>アップロード</a><br>
 <a href='g_logoff.php'>ログオフ</a></p>
-
 <?php
 } else {
   session_destroy();

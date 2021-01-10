@@ -1,37 +1,35 @@
 <?php
 session_start();
 ?>
-
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ようこそ愛鳥獣写真館momoへ！</title>
+<title>たび画像アップロード</title>
 </head>
-<body>
-<p style="color: red">　愛鳥獣写真館momo (=^..^=)</p>
-
+<body style="background-color: lightblue;">
 <?php
-if (isset($_SESSION['us']) && $_SESSION['us'] != null) {
+if (isset($_SESSION['us']) && $_SESSION['us'] != null && $_SESSION['tm'] >= time() - 300) {
+  $_SESSION['tm'] = time();
 ?>
-
+<p style="color: red">たび写真館</p>
 <p>投稿よろしくお願いします！</p>
-<form enctype='multipart/form-data' action='g_up_set.php' method='post'>
+<form enctype='multipart/form-data' action='gz_up_set.php' method='post'>
   名前<br>
-  <input type='text' name='myn'><br>
+  <input type='text' name='myn' value="<?php print $_SESSION['us'] ?>"><br>
   メッセージ<br>
   <textarea name='mym' rows='10' cols='70'></textarea><br>
   <input type='file' name='myf'>
   <p>送信できるのは1MBまでのJPEG画像だけです！<br>
   また展開後のメモリ消費が多い場合アップロードできません。</p>
   <input type='submit' value='送信'>
+  <p><a href=gz.php>一覧表示へ</a></p>
 </form>
-<p><a href=g.php>一覧表示へ</a></p>
-
 <?php
 } else {
   session_destroy();
   print "<p>ちゃんとログオンしてね！<br>
-        <a href='g_logon.html'>ログオン</a></p>";
+        <a href='gz_logon.php'>ログオン</a></p>";
 }
 ?>
 

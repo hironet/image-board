@@ -1,13 +1,13 @@
 <?php
 session_start();
-
 $_SESSION = array();
 if (isset($_COOKIE["PHPSESSID"])) {
   setcookie("PHPSESSID", '', time() - 3600, '/');
 }
 session_destroy();
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <title>ご利用ありがとうございました</title>

@@ -1,12 +1,11 @@
 <?php
 session_start();
-
 $u = htmlspecialchars($_POST['user'], ENT_QUOTES);
 $p = htmlspecialchars($_POST['pass'], ENT_QUOTES);
 require_once("db_init.php");
 ?>
-
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
 <meta charset="UTF-8">
 <title>ようこそ愛鳥獣写真館momoへ！</title>
@@ -20,27 +19,21 @@ if ($ps->rowCount() > 0) {
   if ($r['pas'] === md5($p)) {
     $_SESSION['us'] = $u;
 ?>
-
 <p>ようこそ愛鳥獣写真館momoへ！</p>
 <p><a href='g.php'>ここをクリックして一覧表示にどうぞ</a></p>
-
 <?php
   } else {
     session_destroy();
 ?>
-
 <p>パスワードが違います<br>
 <a href='g_logon.html'>ログオン</a></p>
-
 <?php
   }
 } else {
   session_destroy();
 ?>
-
 <p>ユーザーが登録されていません<br>
 <a href='g_logon.html'>ログオン画面へ</a></p>
-
 <?php
 }
 ?>
